@@ -1,0 +1,28 @@
+{
+    "name": "miralexsky/ozon-logistics-provider",
+    "type": "package",
+    "keywords": ["ozon", "logistics", "delivery", "api", "rocket", "laravel", "service", "provider"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Miralexsky\\OzonLogisticsProvider\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "miralexsky",
+            "email": "miralexsky@gmail.com"
+        }
+    ],
+    "require": {
+        "miralexsky/ozon-logistics-api": "^1.1",
+        "illuminate/support": ">=6"
+    },
+    "extra": {
+        "laravel":{
+            "providers": [
+                "Miralexsky\\OzonLogisticsProvider\\OzonProvider"
+            ]
+        }
+    }
+}
