@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "miralexsky/ozon-logistics-api": "^1.1",
+        "miralexsky/ozon-logistics-api": "dev-master",
         "illuminate/support": ">=5.0"
     },
     "extra": {
