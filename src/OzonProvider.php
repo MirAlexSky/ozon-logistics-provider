@@ -18,6 +18,7 @@ class OzonProvider extends ServiceProvider
         $publishPath = $this->app->basePath('config/ozon.php');
 
         $this->publishes([$configPath => $publishPath]);
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
     }
 
     /**

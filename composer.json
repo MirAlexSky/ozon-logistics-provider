@@ -16,7 +16,7 @@
     ],
     "require": {
         "miralexsky/ozon-logistics-api": "^1.1",
-        "illuminate/support": ">=5.1"
+        "illuminate/support": ">=5.0"
     },
     "extra": {
         "laravel":{
