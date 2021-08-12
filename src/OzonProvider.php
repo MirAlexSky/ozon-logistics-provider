@@ -18,7 +18,6 @@ class OzonProvider extends ServiceProvider
         $publishPath = $this->app->basePath('config/ozon.php');
 
         $this->publishes([$configPath => $publishPath]);
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
     }
 
     /**
@@ -28,7 +27,7 @@ class OzonProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('ozon_logistics', function () {
+        $this->app->bind(OzonClient::class, function () {
 
             $clientId = $this->app->make('config')->get('ozon.clientId');
             $clientSecret = $this->app->make('config')->get('ozon.clientSecret');
@@ -41,6 +40,16 @@ class OzonProvider extends ServiceProvider
 
             return $ozonClient;
 
+        });
+
+        $this->app->bind(OzonOrder::class, function () {
+
+            $buyer = $this->app->make('config')->get('ozon.buyer');
+
+            $ozonOrder =  new OzonOrder();
+            $ozonOrder->setBuyer($buyer);
+
+            return $ozonOrder;
         });
 
         $this->mergeConfigFrom(__DIR__.'/../config/ozon.php', 'ozon');
